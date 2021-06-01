@@ -12,8 +12,6 @@ There is also the possibility to check out
 the association between artists and paintings,
 the list of paintings and the list of artists.
 """
-from inserter import add_element
-from checking import Check
 import argparse
 import pandas as pd
 
