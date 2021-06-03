@@ -25,3 +25,16 @@ class Check:
         if artist in artists.values:
             return True
         return False
+
+    def check_paintings(self, painting):
+        """
+        This function controls if the input given
+        by the user is present in the artwork
+        column inside the csv file.
+        """
+        painting = painting.lower()
+        db = pd.DataFrame(pd.read_csv('artistsandpaintings.csv'))
+        paintings = db["Artwork"].str.lower()
+        if painting in paintings.values:
+            return True
+        return False
