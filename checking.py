@@ -20,7 +20,7 @@ class Check:
             li = list(string.split(" "))
             return li
         artist = artist.lower()
-        db = pd.DataFrame(pd.read_csv('artistsandpaintings.csv'))
+        db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
         artists = db["Name"].str.lower()
         if artist in artists.values:
             return True
@@ -33,7 +33,7 @@ class Check:
         column inside the csv file.
         """
         painting = painting.lower()
-        db = pd.DataFrame(pd.read_csv('artistsandpaintings.csv'))
+        db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
         paintings = db["Artwork"].str.lower()
         if painting in paintings.values:
             return True
