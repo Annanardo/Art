@@ -1,8 +1,8 @@
-v,Name,Life,Artwork,Year,Museum,Genre,Nationality,paintings,wikipedia
+v,Name,Life,Artwork,Year,Museum,Genre,Nationality,Paintings,wikipedia
 0,Amedeo Modigliani,1884 - 1920,Reclining Nude,1917,Metropolitan Museum of Art - New York City,Expressionism,Italian,193,http://en.wikipedia.org/wiki/Amedeo_Modigliani
 1,Vasiliy Kandinskiy,1866 - 1944,Composition VII,1913,Galleria Tret'jakov - Moscow,Expressionism - Abstractionism,Russian,88,http://en.wikipedia.org/wiki/Wassily_Kandinsky
 2,Diego Rivera,1886 - 1957,Street in Avila,1908,Museo Nacional de Arte - Ciudad del México,Social Realism - Muralism,Mexican,70,http://en.wikipedia.org/wiki/Diego_Rivera
-3,Claude Monet,1840 - 1926,"Impression, Sunrise",1872,Musée Marmottan Monet,Impressionism,French,73,http://en.wikipedia.org/wiki/Claude_Monet
+3,Claude Monet,1840 - 1926,"Impression, Sunrise",1872,Musée Marmottan Monet - Paris,Impressionism,French,73,http://en.wikipedia.org/wiki/Claude_Monet
 4,Rene Magritte,1898 - 1967,The Treachery of Images,1929,Los Angeles County Museum of Art - Los Angeles,Surrealism - Impressionism,Belgian,194,http://en.wikipedia.org/wiki/René_Magritte
 5,Salvador Dali,1904 - 1989,The persistence of memory,1931, Museum of Modern Art - New York,Surrealism,Spanish,139,http://en.wikipedia.org/wiki/Salvador_Dalí
 6,Edouard Manet,1832 - 1883,The Luncheon on the Grass,1863,Museo d'Orsay - Paris,Realism - Impressionism,French,90,http://en.wikipedia.org/wiki/Édouard_Manet
@@ -19,7 +19,7 @@ v,Name,Life,Artwork,Year,Museum,Genre,Nationality,paintings,wikipedia
 17,Frida Kahlo,1907 - 1954,Self-potrait with thorn necklace and hummingbird,1940,Harry Ransom Center - Austin,Primitivism - Surrealism,Mexican,120,http://en.wikipedia.org/wiki/Frida_Kahlo
 18,El Greco,1541 - 1614,Dormition of the Virgin,1567,Holy Cathedral of the Dormition of the Virgin - Hermoupolis,Mannerism,Spanish - Greek,87,http://en.wikipedia.org/wiki/El_Greco
 19,Albrecht Dürer,1471 - 1528,Self-potrait,1500,Alte Pinakothek - Munich,Northern Renaissance,German,328,http://en.wikipedia.org/wiki/Albrecht_Dürer
-20,Alfred Sisley,1839 - 1899,Snow at Louveciennes,1875,"Musée d'Orsay, Paris",Impressionism,French - British,259,http://en.wikipedia.org/wiki/Alfred_Sisley
+20,Alfred Sisley,1839 - 1899,Snow at Louveciennes,1875,Musée d'Orsay - Paris,Impressionism,French - British,259,http://en.wikipedia.org/wiki/Alfred_Sisley
 21,Pieter Bruegel,1525 - 1569,Landscape with the Fall of Icarus,1558,The Royal Museum of Fine Arts - Brussels,Northern Renaissance,Flemish,134,http://en.wikipedia.org/wiki/Pieter_Bruegel_the_Elder
 22,Marc Chagall,1887 - 1985,The Promenade,1918,State museum of saint petersburg - Saint Petersburg,Primitivism,French - Jewish - Belarusian,239,http://en.wikipedia.org/wiki/Marc_Chagall
 23,Giotto di Bondone,1266 - 1337,Ognissanti Madonna,1310,Ognissanti Church - Florence,Proto Renaissance,Italian,119,http://en.wikipedia.org/wiki/Giotto_di_Bondone
