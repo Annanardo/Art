@@ -32,6 +32,7 @@ def add_element(a_or_p, response=""):
     of the database.
     """
     db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
+    
     if Check().check_artist(a_or_p):
         return print("Sorry, but " + a_or_p + " is already present " +
                      "in the database, thank you anyway")
@@ -49,6 +50,7 @@ def add_element(a_or_p, response=""):
             name2 = "Monet"
         else:
             name1 = input("Is he/she an artist or is it a painting (a or p) -> ")
+        
         if name1 == "a":
             if response == "":
                 name2 = input("Now enter the name of his/her most famous painting -> ")
@@ -124,4 +126,4 @@ def add_element(a_or_p, response=""):
                 write_obj.close()
             return print("Thank you for your contribution!")
         else:
-            return input("You need to input either a or p")
+            return input("You need to input a or p")
