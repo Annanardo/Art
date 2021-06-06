@@ -59,7 +59,26 @@ sufficient to type:
 ```bash
 python main.py "name of the artist/painting" - positional argument
 ```
+No positional argument is required if the user only wants to know whether the artist
+is present in the csv file.
+For example, if we now want to know if Claude Monet is present, we have just to write:
 
+```bash
+python main.py "Claude Monet"
+```
+
+And the output will be:
+
+```bash
+Claude Monet is the artist of Impression, Sunrise
+```
+
+Instead, for more complicated queries, we can recall some positional arguments, such as:
+
+- a, input: artist or painting
+- d, input: artist or painting
+- p, input: painting
+- art, input: artist 
 
 # Contributing
 
