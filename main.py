@@ -45,7 +45,7 @@ if args.paintings:
 if args.artist:
     print("Now you can see by yourself if the artist is present in our database!")
     #db.drop("Unnamed: 0", axis=1, inplace=True)
-    print(db["Artwork"])
+    print(db["Name"])
 if args.database:
     print("Now you can see by yourself if the artist and his/her most famous painting are present in our database!")
     #db.drop("Unnamed: 0", axis=1, inplace=True)
