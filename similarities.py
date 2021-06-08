@@ -42,7 +42,13 @@ def similarities(column, parameter):
     else:
         parameter = str(parameter)
         result = db.loc[db[column] == parameter ][["Name"]]
-        if len(result) >1:
-            print("The artists that satisfy the parameter {} are the following: {}".format(parameter, result))
+        if column == ("Nationality"):
+            if len(result) >1:
+                print("{} artists are the following: {}".format(parameter, result))
+            else:
+                print("Sorry, there are not {} artists ".format(parameter))
         else:
-            print("Sorry, there are not similarities with {} parameter ".format(parameter))
+            if len(result) >1:
+                print("Artists belonging to {} movement(s) are the following: {}".format(parameter, result))  
+            else:
+                print("Sorry, there are not artists belonging to {} movement(s) ".format(parameter))
