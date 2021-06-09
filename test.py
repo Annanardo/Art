@@ -10,6 +10,7 @@ to test the functions.
 import unittest
 from checking import Check
 import inserter as ins
+import similarities as sim
 import pandas as pd
 
 
@@ -30,6 +31,8 @@ class TestName(unittest.TestCase):
         self.F_painting = "11"
         self.new_artist = "Bansky"
         self.database = "artists_paintings.csv"
+        self.column = "Nationality"
+        self.parameter = "German - Swiss"
 
     def test_correct_check_artist(self):
         self.assertEqual(Check().check_artist(self.T_artist), True)
@@ -55,6 +58,9 @@ class TestName(unittest.TestCase):
         self.assertEqual(test2, ins.add_element(self.T_painting))
         test3 = print("Thank you for your contribution!")
         self.assertEqual(test3, ins.add_element(self.new_artist, "a"))
+
+    def test_correct_similarities(self):
+        self.assertEqual(sim.similarities(self.column, self.parameter), True)
 
 # by setting this up we can run this file
 # on the command line without having

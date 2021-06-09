@@ -2,8 +2,11 @@ import pandas as pd
 
 def similarities(column, parameter):
     """
-    This function returns all the artists that satisfy a required parameter
-    given by the user. 
+    This function returns similarities between the artist given as an input and 
+    the other artists stored in our database. The code is structured in order to 
+    individuate similarities according to column "Nationality", "Genre" and "paintings". 
+    If the user is looking for similarities according to the number of paintings,
+    she/he is asked to specify if she/he is interested in more, less or equal number of artworks. 
     """ 
     db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
     
@@ -39,7 +42,13 @@ def similarities(column, parameter):
     else:
         parameter = str(parameter)
         result = db.loc[db[column] == parameter ][["Name"]]
-        if len(result) >1:
-            print("The artists that satisfy the parameter {} are the following: {}".format(parameter, result))
+        if column == ("Nationality"):
+            if len(result) >1:
+                print("{} artists are the following: {}".format(parameter, result))
+            else:
+                print("Sorry, there are not {} artists ".format(parameter))
         else:
-            print("Sorry, we there are not similarities with {} parameter ".format(parameter))
+            if len(result) >1:
+                print("Artists belonging to {} movement(s) are the following: {}".format(parameter, result))  
+            else:
+                print("Sorry, there are not artists belonging to {} movement(s) ".format(parameter))
