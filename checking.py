@@ -34,6 +34,7 @@ class Check:
             return True
         return False
 
+
     def check_paintings(self, painting):
         """
         This function controls if the input given
@@ -50,5 +51,5 @@ class Check:
         paintings = db["Artwork"].str.lower()
         if painting in paintings.values:
             return True
-    
+
         return False
