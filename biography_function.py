@@ -26,7 +26,7 @@ import pandas as pd
     the input, the user writes the optional argument -bio.
     It asks if the input is a name of an artist or a painting.
     """
-db = pd.DataFrame(pd.read_csv('artistsandpaintings.csv'))
+db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
 
 Artists= list(db["Name"])
    
