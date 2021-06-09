@@ -26,8 +26,8 @@ def return_bio(Artist):
     the input, the user writes the optional argument -bio.
     It asks if the input is a name of an artist or a painting.
     """
-db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
-Artists= list(db["Name"])
+    db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
+    Artists= list(db["Name"])
 
     if Artist in Artists:
         print(db["Name"].loc[db["Name"].str.lower() == Artist.lower()].values[0],"is a/an", db["Nationality"].loc[db["Name"].str.lower() ==
