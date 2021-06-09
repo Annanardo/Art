@@ -16,6 +16,7 @@ the list of paintings and the list of artists.
 from inserter import add_element
 from checking import Check
 from similarities import similarities
+from biography import return_bio
 import argparse
 import pandas as pd
 
@@ -41,7 +42,8 @@ group.add_argument("-art", "--artist", action="store_true",
                    help="show the list of artists")
 group.add_argument("-s", "--similarities", action="store_true",
                    help="please insert the column label and the similarity value")
-
+group.add_argument("-bio", "--biography", action="store_true",
+                   help="entire biography of the artist")
 args = parser.parse_args()
 answer = args.name
 
@@ -51,11 +53,24 @@ if args.paintings:
     print("Now you can see by yourself if the painting is present in our database!")
     #db.drop("Unnamed: 0", axis=1, inplace=True)
     print(db["Artwork"])
-if args.artist:
+elif args.artist:
     print("Now you can see by yourself if the artist is present in our database!")
     #db.drop("Unnamed: 0", axis=1, inplace=True)
     print(db["Name"])
-if args.database:
+
+if args.similarities:
+    response2 = input("Do you want to see the similarities according to nationality, artistic movement or number of paintings? (nat, mov, nop) -> ")
+    if response2 == "nat":
+        similarities("Nationality", db.loc[db['Name'] == answer, 'Nationality'].iloc[0])
+    elif response2 == "mov":
+        similarities("Genre", db.loc[db['Name'] == answer, 'Genre'].iloc[0])
+    else:
+        similarities("Paintings", int(db.loc[db['Name'] == answer, 'Paintings'].iloc[0]))
+           
+elif args.biography:
+    return_bio(answer)
+
+elif args.database:
     print("Now you can see by yourself if the artist and his/her most famous painting are present in our database!")
     #db.drop("Unnamed: 0", axis=1, inplace=True)
     print(db["Name"]+ " : " + db["Artwork"])
@@ -83,12 +98,4 @@ else:
         else:
             print("Use -d to check if it is already in our database, maybe there is a spelling error in the input. Then try again, thank you for your patiance!")
 
-if args.similarities:
-    response2 = input("Do you want to see the similarities according to nationality, artistic movement or number of paintings? (nat, mov, nop) -> ")
-    if response2 == "nat":
-        similarities("Nationality", db.loc[db['Name'] == answer, 'Nationality'].iloc[0])
-    elif response2 == "mov":
-        similarities("Genre", db.loc[db['Name'] == answer, 'Genre'].iloc[0])
-    else:
-        similarities("Paintings", int(db.loc[db['Name'] == answer, 'Paintings'].iloc[0]))
-           
+
