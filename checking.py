@@ -9,8 +9,8 @@ present in the "artists_paintings.csv file" respectively.
 
 import pandas as pd
 
-class Check:
 
+class Check:
 
     def check_artist(self, artist):
         """
