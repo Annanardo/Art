@@ -13,3 +13,34 @@ and invite you to check if you wrote it correctly.
 #You can also check the full biography with
 the Wikipedia's link.
 """
+
+import csv
+import pandas as pd
+
+
+
+    """
+    This function comes into play once the user inputs a value
+    and wants to obtain as output the complete list of information that
+    can be found inside the database, or when, after
+    the input, the user writes the optional argument -bio.
+    It asks if the input is a name of an artist or a painting.
+    """
+db = pd.DataFrame(pd.read_csv('artistsandpaintings.csv'))
+
+Artists= list(db["Name"])
+   
+def return_bio(Artist):
+    if Artist in Artists:
+        print(db["Name"].loc[db["Name"].str.lower() == Artist.lower()].values[0],"is a/an", db["Nationality"].loc[db["Name"].str.lower() ==
+            Artist.lower()].values[0], "artist that has lived in these years:",db["Life"].loc[db["Name"].str.lower() ==
+            Artist.lower()].values[0], ". The artist painted in", db["Year"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0],"his/her most famous painting, which is:",db["Artwork"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0], ", is now displayed at the", db["Museum"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0],". The painter belongs to: ", db["Genre"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0], "movement(s). Together with his/her most famous painting, he/she realized", db["paintings"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0], "artworks in total. Here you can find the web link to see the complete biography: ", db["wikipedia"].loc[db["Name"].str.lower() ==
+              Artist.lower()].values[0])
+    else:
+        print(Artist + " seems not to be present in our database. Are you sure that you wrote the name of the artist correctly? Use -d to check if it is already in our database, maybe there is a spelling error in the input. Check it and then try again, if it is not present, use -a to insert the new artist, thank you for your patience!")
+            
