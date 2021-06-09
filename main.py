@@ -16,7 +16,7 @@ the list of paintings and the list of artists.
 from inserter import add_element
 from checking import Check
 from similarities import similarities
-from biography import return_bio
+from biography_function import return_bio
 import argparse
 import pandas as pd
 
