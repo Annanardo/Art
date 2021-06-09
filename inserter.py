@@ -2,15 +2,15 @@
 The function of the inserter module
 allows to append new artists with relative
 most famous painting into our database.
-The function first checks if the input 
+The function first checks if the input
 we want to insert is already present in
-the database, if not it asks weather 
-you are inserting the name of an artist 
+the database, if not it asks weather
+you are inserting the name of an artist
 or of a painting.
-After that it asks you to add all the 
-other additional information, to generate 
+After that it asks you to add all the
+other additional information, to generate
 a list of 11 items.
-Finally the list is inserter in a new 
+Finally the list is inserter in a new
 row becoming part
 of our database.
 """
@@ -28,18 +28,20 @@ def add_element(a_or_p, response=""):
     that is not to be found inside the database, or when, after
     the input, the user writes the optional argument -a.
     It asks if the input is a name of an artist or a painting,
-    then it asks for the remaining values to insert in all the 9 columns 
+    then it asks for the remaining values to insert in all the 9 columns
     of the database.
     """
     db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
-    
+
     if Check().check_artist(a_or_p):
         return print("Sorry, but " + a_or_p + " is already present " +
                      "in the database, thank you anyway")
     elif Check().check_paintings(a_or_p):
         return print("Sorry, but " + a_or_p + " is already " +
-                     "present in the database. {} is a painting of {}.".format(a_or_p, db["Name"].loc[db["Artwork"].str.lower() ==
-              a_or_p.lower()].values[0]))
+                     "present in the database. {} is a painting of {}."
+                     .format(a_or_p, db["Name"].loc[
+                         db["Artwork"].str.lower() == a_or_p.lower()]
+                             .values[0]))
 
     else:
         if response == "a":
@@ -49,80 +51,118 @@ def add_element(a_or_p, response=""):
             name1 = "p"
             name2 = "Monet"
         else:
-            name1 = input("Is he/she an artist or is it a painting (a or p) -> ")
-        
+            name1 = input(
+                "Is he/she an artist or is it a painting (a or p) -> ")
+
         if name1 == "a":
             if response == "":
-                name2 = input("Now enter the name of his/her most famous painting -> ")
+                name2 = input(
+                    "Now enter the name of his/her most famous painting -> ")
                 while(name2 == ""):
                     name2 = input("You can't enter nothing... " +
                                   "so please... put anything -> ")
-            life = input("Now enter the date of birth and death of the artist->")
+            life = input(
+                "Now enter the date of birth and death of the artist->")
             while(life == ""):
-                life = input("You can't enter nothing..." + "please put anything ->")
-            year = input("Now enter the year(s) of realization of the most famous artwork of the artist->")
+                life = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            year = input(
+                "Now enter the year(s) of realization" +
+                "of the most famous artwork of the artist->")
             while(year == ""):
-                year = input("You can't enter nothing..." + "please put anything ->")
-            museum = input("Now enter the museum and place (museum - city) where the painting is placed->")
+                year = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            museum = input(
+               "Now enter the museum and place (museum - city)" +
+               "where the painting is placed->")
             while(museum == ""):
-                museum = input("You can't enter nothing..." + "please put anything ->")
-            genre = input("Now enter the artistic movement of the artist->")
+                museum = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            genre = input(
+               "Now enter the artistic movement of the artist->")
             while(genre == ""):
-                genre = input("You can't enter nothing..." + "please put anything ->")
-            nationality = input("Now enter the nationality of the artist->")
+                genre = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            nationality = input(
+                "Now enter the nationality of the artist->")
             while(nationality == ""):
-                nationality = input("You can't enter nothing..." + "please put anything ->")
-            paintings = input("Now enter the total number of artworks realized by the artist->")
+                nationality = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            paintings = input(
+                "Now enter the total number of artworks" +
+                "realized by the artist->")
             while(paintings == ""):
-                paintings = input("You can't enter nothing..." + "please put anything ->")
-            wiki = input("Now enter the link to the wikipedia page of the artist->")
+                paintings = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            wiki = input(
+                "Now enter the link to the wikipedia page of the artist->")
             while(wiki == ""):
-                wiki = input("You can't enter nothing..." + "please put anything ->")
+                wiki = input(
+                    "You can't enter nothing..." + "please put anything ->")
 
             with open(r'artists_paintings.csv', 'a') as write_obj:
                 writer = csv.writer(write_obj)
                 row = len(db)
                 write_obj.write("\n")
-                writer.writerow([row, a_or_p, life, name2,year,museum,genre,nationality,paintings, wiki])
+                writer.writerow([row, a_or_p, life, name2, year,
+                                 museum, genre, nationality, paintings, wiki])
                 write_obj.close()
             return print("Thank you for your contribution!")
-                   
+
         elif name1 == "p":
             if response == "":
                 name2 = input("Now enter the name of the artist -> ")
                 while(name2 == ""):
                     name2 = input("You can't enter nothing..." +
                                   "so please... put anything -> ")
-            life = input("Now enter the date of birth and death of the artist->")
+            life = input(
+                "Now enter the date of birth and death of the artist->")
             while(life == ""):
-                life = input("You can't enter nothing..." + "please put anything ->")
-            artwork = input("Now enter the the most famous artwork of the artist->")
+                life = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            artwork = input(
+                "Now enter the the most famous artwork of the artist->")
             while(artwork == ""):
-                artwork = input("You can't enter nothing..." + "please put anything ->")
-            year = input("Now enter the year(s) of realization of the most famous artwork of the artist->")
+                artwork = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            year = input(
+                "Now enter the year(s) of realization of" +
+                "the most famous artwork of the artist->")
             while(year == ""):
-                year = input("You can't enter nothing..." + "please put anything ->")
-            museum = input("Now enter the museum and place (museum, city) where the painting is placed->")
+                year = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            museum = input(
+                "Now enter the museum and place (museum, city)" +
+                "where the painting is placed->")
             while(museum == ""):
-                museum = input("You can't enter nothing..." + "please put anything ->")
+                museum = input(
+                    "You can't enter nothing..." + "please put anything ->")
             genre = input("Now enter the artistic movement of the artist->")
             while(genre == ""):
-                genre = input("You can't enter nothing..." + "please put anything ->")
+                genre = input(
+                    "You can't enter nothing..." + "please put anything ->")
             nationality = input("Now enter the nationality of the artist->")
             while(nationality == ""):
-                nationality = input("You can't enter nothing..." + "please put anything ->")
-            paintings = input("Now enter the total number of artworks realized by the artist->")
+                nationality = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            paintings = input(
+                "Now enter the total number of artworks" +
+                "realized by the artist->")
             while(paintings == ""):
-                paintings = input("You can't enter nothing..." + "please put anything ->")
-            wiki = input("Now enter the link to the wikipedia page of the artist->")
+                paintings = input(
+                    "You can't enter nothing..." + "please put anything ->")
+            wiki = input(
+                "Now enter the link to the wikipedia page of the artist->")
             while(wiki == ""):
-                wiki = input("You can't enter nothing..." + "please put anything ->")
+                wiki = input(
+                    "You can't enter nothing..." + "please put anything ->")
 
             with open(r'artists_paintings.csv', 'a') as write_obj:
                 writer = csv.writer(write_obj)
                 row = len(db)
-                write_obj.write("\n") 
-                writer.writerow([row, name2, life, a_or_p,year,museum,genre,nationality,paintings,wiki])
+                write_obj.write("\n")
+                writer.writerow([row, name2, life, a_or_p, year,
+                                 museum, genre, nationality, paintings, wiki])
                 write_obj.close()
             return print("Thank you for your contribution!")
         else:
