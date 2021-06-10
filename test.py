@@ -1,9 +1,9 @@
 """
-This module is the one that tests all the 4 functions
+This module is the one that tests some of the functions
 necessary to let the user interact with the database.
 Each Test Case tests a Known valid and invalid entries.
 tearDown and setUp functions were used as well
-to set up mock variables and csv files needed
+to set up mock variables and the csv file needed
 to test the functions.
 """
 
@@ -22,6 +22,7 @@ class TestName(unittest.TestCase):
         print(db)
         ind = db.loc[db["Name"] == "Bansky"].index.values
         db.drop(db.index[ind[0]], inplace=True)
+        db.to_csv("artists_paintings.csv", index=False)
         print(db)
 
     def setUp(self):
@@ -60,7 +61,7 @@ class TestName(unittest.TestCase):
         self.assertEqual(test3, ins.add_element(self.new_artist, "a"))
 
     def test_correct_similarities(self):
-        self.assertEqual(sim.similarities(self.column, self.parameter), True)
+        self.assertEqual(sim.similarities(self.column, self.parameter), None)
 
 # by setting this up we can run this file
 # on the command line without having
