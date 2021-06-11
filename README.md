@@ -87,7 +87,7 @@ Instead, for more complicated queries, we can recall some optional arguments.
 
 Here follow some examples:
 
-#### Add a new artist (-a)
+### • Add a new artist (-a)
 
 ```bash
 python main.py "Bansky" -a
@@ -107,7 +107,7 @@ Now enter the link to the wikipedia page of the artist-> https://en.wikipedia.or
 Thank you for your contribution!
 ```
 
-#### Find manually if the artist/painting is present in the database (-d)
+### • Find manually if the artist/painting is present in the database (-d)
 
 Another argument is `python main.py "Claude Monet" -d`, which after being called allows to get the database realtion between artist and painting:
 
@@ -171,7 +171,7 @@ Other two commands are:
 - `python main.py "Claude Monet" -a`, to have access to the entire list of artists only.
 
 
-#### Print a bio of the artist (-bio)
+### • Print a bio of the artist (-bio)
 
 The function of the biography module can be used to explain, in a more understandable and complete way, the life of the artists. Together with the name and the nationality, It puts together some details that can be found in the dataset's columns. 
 The function first check if the input we inserted is present in the database, if not the system will warn you and invite you to check if you wrote it correctly.
@@ -198,7 +198,7 @@ the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ```
 
-#### Compare different artists (-s)
+### • Compare different artists (-s)
 
 The similarities function is a function that allows the user to make some
 comparisons between the artist she/he is interested in and other artists.
