@@ -10,7 +10,7 @@ we inserted is present in
 the database, if not the system will warn you
 and invite you to check if you wrote it correctly.
 
-#You can also check the full biography with
+You can also check the full biography with
 the Wikipedia's link.
 """
 
