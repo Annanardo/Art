@@ -1,7 +1,7 @@
 """
 The function of the biography module
 is to explain, in a more understandable way,
-the life of artists with relative
+who was the artist with relative
 most famous painting, the number of artworks that
 has been made, movement, day of birth and death
 that can be found into our database.
