@@ -166,7 +166,9 @@ To use the function the user should recall the optional argument:
 python main.py "Claude Monet" -bio
 ```
 
-This will return a brief description of who was the artist, in which years has lived, which was his/her most famous painting and in which year it was painted. After this, you can find the museum in which the artwork is actually displayed, to which movement the artist belongs and the total number of artworks that has been made, together with the Wikipedia link. 
+This will return a brief description of who was the artist, in which years has lived, which was his/her most famous painting and in which year it was painted. After this, you can find the museum in which the artwork is actually displayed, to which movement the artist belongs and the total number of artworks that has been made, together with the Wikipedia link: 
+
+
 
 
 # Contributing
