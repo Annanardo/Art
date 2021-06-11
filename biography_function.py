@@ -49,7 +49,7 @@ def return_bio(Artist):
                     0], "movement(s)." +
                     " in addition to his/her" +
                     " most famous painting, she/he made", db[
-                    "paintings"].loc[
+                    "Paintings"].loc[
                         db["Name"].str.lower() == Artist.lower(
                             )].values[0], "artworks in total." +
                                           "Here you can find" +
