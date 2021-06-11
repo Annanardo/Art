@@ -51,17 +51,17 @@ answer = args.name
 check = Check()
 
 if args.paintings:
-    print("Now you can see by yourself if the painting" +
+    print("Now you can see by yourself if the painting " +
           "is present in our database!")
     print(db["Artwork"])
 elif args.artist:
-    print("Now you can see by yourself if the painting" +
+    print("Now you can see by yourself if the painting " +
           "is present in our database!")
     print(db["Name"])
 
 if args.similarities:
-    response2 = input("Do you want to see the similarities according" +
-                      "to nationality, artistic movement or number" +
+    response2 = input("Do you want to see the similarities according " +
+                      "to nationality, artistic movement or number " +
                       "of paintings? (nat, mov, nop) -> ")
     if response2 == "nat":
         similarities("Nationality", db.loc[
@@ -76,7 +76,7 @@ elif args.biography:
     return_bio(answer)
 
 elif args.database:
-    print("Now you can see by yourself if the artist and his/her" +
+    print("Now you can see by yourself if the artist and his/her " +
           "most famous painting are present in our database!")
     print(db["Name"] + " : " + db["Artwork"])
 else:
@@ -93,9 +93,9 @@ else:
               db["Artwork"].loc[db["Name"].str.lower() ==
               answer.lower()].values[0])
     else:
-        response = input(answer + " is not present in our database. Are you" +
-                         "sure that you wrote it correctly" +
-                         "(use -d to check if it is" +
+        response = input(answer + " is not present in our database. Are you " +
+                         "sure that you wrote it correctly " +
+                         "(use -d to check if it is " +
                          "already in our database)?(y or n) -> ")
         if response == "y":
             response1 = input(
@@ -105,6 +105,6 @@ else:
             else:
                 print("Thank you anyway")
         else:
-            print("Use -d to check if it is already in our database," +
-                  "maybe there is a spelling error in the input." +
+            print("Use -d to check if it is already in our database, " +
+                  "maybe there is a spelling error in the input. " +
                   "Then try again, thank you for your patiance!")
