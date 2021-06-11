@@ -30,20 +30,41 @@ def return_bio(Artist):
     Artists = list(db["Name"])
 
     if Artist in Artists:
-        print(db["Name"].loc[db["Name"].str.lower() == Artist.lower()].values[0], +
-        "is a/an", db["Nationality"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0], + "artist that has lived in these years:", db["Life"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] , ". The artist painted in", db["Year"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] ,"his/her most famous painting, which is:", db["Artwork"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] , ", is now displayed at the",  db["Museum"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] ,". The painter belongs to: ", db["Genre"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] , "movement(s). Together with his/her most famous painting, he/she realized", db["Paintings"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0] , "artworks in total. Here you can find the web link to see the complete biography: ", db["wikipedia"].loc[db["Name"].str.lower() ==
-            Artist.lower()].values[0])
+        print(db["Name"].loc[
+            db["Name"].str.lower() == Artist.lower()].values[0], "is a/an", db[
+                "Nationality"].loc[
+                    db["Name"].str.lower() == Artist.lower()].values[
+                    0], "artist who lived in these years:", db["Life"].loc[
+                    db["Name"].str.lower() == Artist.lower()].values[
+                    0], ". The artist painted in", db["Year"].loc[
+                        db["Name"].str.lower() == Artist.lower()].values[
+                            0], "the most famous painting," + "named:", db[
+                                "Artwork"].loc[db["Name"].str.lower(
+                                    ) == Artist.lower()].values[
+                                        0], ",now displayed at the",  db[
+                                            "Museum"].loc[
+                                                db["Name"].str.lower() ==
+            Artist.lower()].values[0], ". The painter belongs to: ", db[
+                "Genre"].loc[db["Name"].str.lower() == Artist.lower()].values[
+                    0], "movement(s)." +
+                    " in addition to his/her" +
+                    " most famous painting, she/he made", db[
+                    "paintings"].loc[
+                        db["Name"].str.lower() == Artist.lower(
+                            )].values[0], "artworks in total." +
+                                          "Here you can find" +
+                                          " the web link" +
+                                          " to see" +
+                                          " the complete biography: ", db[
+                                          "wikipedia"].loc[db[
+                                              "Name"].str.lower(
+                                              ) == Artist.lower()].values[0])
     else:
-        print(Artist + " seems not to be present in our database.") +
-        ("Are you sure that you wrote the name of the artist correctly?") +
-        ("Use -d to check if it is already in our database,") +
-        ("maybe there is a spelling error in the input.") +
-        ("Check it and then try again, if it is not present,") +
-        ("use -a to insert the new artist, thank you for your patience!")
+        print(Artist + " seems not to be present in our database." +
+                       "Are you sure that you wrote" +
+                       " the name of the artist correctly?" +
+                       " Use -d to check if it is already in our database," +
+                       "maybe there is a spelling error in the input." +
+                       " Check it and then try again, if it is not present," +
+                       "use -a to insert the new artist," +
+                       " thank you for your patience!")
