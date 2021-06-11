@@ -213,13 +213,54 @@ python main.py "Claude Monet" -s
 
 After this, the user is asked if she/he wants to visualize similarities according
 to nationality (nat), artistic movement (mov) or number of paintings (nop).
+Here an example:
 
+```bash
+Do you want to see the similarities according to nationality, artistic movement or number of paintings? 
+(nat, mov, nop) -> nat 
+```
 If the user chooses nationality or artistic movement, the function retrives 
-all the artists that satisfy the requirement. Otherwise, if the user chooses
-to visualize the number of paintings she/he is asked if she/he want to visualize
+all the artists that satisfy the requirement.
+
+```bash
+3                Claude Monet
+6               Edouard Manet
+15      Pierre-Auguste Renoir
+28              Henri Matisse
+30                Edgar Degas
+33  Henri de Toulouse-Lautrec
+34            Gustave Courbet
+35           Camille Pissarro
+38               Paul Cezanne
+39           Eugene Delacroix
+40             Henri Rousseau
+41             Georges Seurat
+46               Paul Gauguin
+```
+
+On the other hand, if the user chooses to visualize 
+the number of paintings, she/he is asked if she/he wants to visualize
 the artists with a higher (>), smaller (<) or equal (==) number of artworks and,
 after the choice, the list of artists is provived.
+For example:
 
+```bash
+Do you want to search for artists that have made more (>), less (<) or the same (==) number you provided as input?<
+```
+
+```bash
+2       Diego Rivera         70
+25        Caravaggio         55
+34   Gustave Courbet         59
+36    William Turner         66
+37      Edvard Munch         67
+38      Paul Cezanne         47
+39  Eugene Delacroix         31
+40    Henri Rousseau         70
+41    Georges Seurat         43
+48      Michelangelo         49
+49   Jackson Pollock         24
+```
 
 # Contributing
 
