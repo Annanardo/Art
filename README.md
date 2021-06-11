@@ -154,6 +154,19 @@ Other two commands are:
 - `paython main.py "Impression, Sunrise" -p` which allows to see the entire list of paintings
 - `paython main.py "Claude Monet" -a`, to have access to the entire list of artists only.
 
+#Biography function
+
+The function of the biography module can be used to explain, in a more understandable and complete way, the life of the artists. Together with the name and the nationality, It puts together some details that can be found in the dataset's columns. 
+The function first check if the input we inserted is present in the database, if not the system will warn you and invite you to check if you wrote it correctly.
+You can also check the full biography with the Wikipedia's link.
+
+To use the function the user should recall the optional argument:
+
+```bash
+python main.py "Claude Monet" -bio
+```
+
+This will return a brief description of who was the artist, in which years has lived, which was his/her most famous painting and in which year it was painted. After this, you can find the museum in which the artwork is actually displayed, to which movement the artist belongs and the total number of artworks that has been made, together with the Wikipedia link. 
 
 
 # Contributing
