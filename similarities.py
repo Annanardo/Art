@@ -8,7 +8,7 @@ def similarities(column, parameter):
     the other artists stored in our database.
     The code is structured in order to
     individuate similarities according to column
-    "Nationality", "Genre" and "paintings".
+    column "Nationality", "Genre" and "paintings".
     If the user is looking for similarities according
     to the number of paintings,
     she/he is asked to specify if she/he is interested
