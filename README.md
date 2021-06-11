@@ -171,7 +171,10 @@ This will return a brief description of who was the artist, in which years has l
 The output:
 
 ```bash
-Claude Monet is a/an French artist who lived in these years: 1840 - 1926 . The artist painted in 1872 the most famous painting,named: Impression, Sunrise ,now displayed at the Musée Marmottan Monet - Paris . The painter belongs to:  Impressionism movement(s). in addition to his/her most famous painting, she/he made 73 artworks in total.Here you can find the web link to see the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
+Claude Monet is a/an French artist who lived in these years: 1840 - 1926 . 
+The artist painted in 1872 the most famous painting,named: Impression, Sunrise ,now displayed at the Musée Marmottan Monet - Paris . 
+The painter belongs to:  Impressionism movement(s). in addition to his/her most famous painting, she/he made 73 artworks in total.
+Here you can find the web link to see the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ```
 
