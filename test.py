@@ -36,19 +36,19 @@ class TestName(unittest.TestCase):
         self.parameter = "German - Swiss"
 
     def test_correct_check_artist(self):
-        self.assertEqual(Check().check_artist(self.T_artist), True)
+        self.assertTrue(Check().check_artist(self.T_artist))
 
     def test_wrong_check_artist(self):
-        self.assertEqual(Check().check_artist(self.F_artist), False)
-        self.assertEqual(Check().check_artist(self.T_painting), False)
-        self.assertEqual(Check().check_artist(self.F_painting), False)
+        self.assertFalse(Check().check_artist(self.F_artist))
+        self.assertFalse(Check().check_artist(self.T_painting))
+        self.assertFalse(Check().check_artist(self.F_painting))
 
     def test_correct_check_paintings(self):
-        self.assertEqual(Check().check_paintings(self.T_painting), True)
+        self.assertTrue(Check().check_paintings(self.T_painting))
 
     def test_wrong_check_paintings(self):
-        self.assertEqual(Check().check_paintings(self.T_artist), False)
-        self.assertEqual(Check().check_paintings(self.F_painting), False)
+        self.assertFalse(Check().check_paintings(self.T_artist))
+        self.assertFalse(Check().check_paintings(self.F_painting))
 
     def test_inserter(self):
         test1 = print("Sorry, but " + self.T_artist +
