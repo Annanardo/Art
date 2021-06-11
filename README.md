@@ -1,76 +1,75 @@
-# Art
+# Art :art:
 
 ArtDatabase is a software development project that allows users to 
-get information about famous artists and their most iconic paintings. 
-Additionally, it allows to get information about artists belonging to the
+obtain information about famous artists and their most iconic paintings. 
+In addition, it allows to get information about artists belonging to the
 same artistic movement or nationality and constructs a short biography on the fly.
 
-If the name of the artist or painting provided as input is not present,
+If the name of the artist or painting given as input is not avaiable,
 the program asks the user whether he/she wants to insert it. 
-All of this can be managed directly from the machine terminal of the user.
+All of this can be managed directly from the user's machine terminal.
 
-In this brief, we will show a general overview of the initial CSV file as well
-as a short explanation of how the software works and the results the user can 
+In the following paragraphs you'll find a general overview of the initial CSV file as well
+as a short explanation of how the software works and the outputs the user can 
 get out of it.
 
 # CSV file
 
-In order to store all the paintings and authors, we created a CSV file we called
- `artists_paintings`, defined by the following properties:
+In order to store all the paintings and authors, we created a CSV file called
+ `artists_paintings.csv`, defined by the following properties:
 
-- Name of the artist;
-- Dates of birth and death;
+- Artist's name;
+- Date of birth and death;
 - Most famous painting;
 - Year of execution;
 - Painting location (Museum);
-- Artistical movement;
+- Artistic movement;
 - Nationality of the artist;
 - Number of paintings the artist did in his/her life;
-- Link to Wikipedia artist's page.
+- Link to the artist's Wikipedia page.
 
 The original file contains 49 rows (corresponding to 49 different artists), but this 
 structure can be changed by the user since there is a function that allows him/her to
-add rows by simply fulfilling some requirements (as the name of the artist the user wants
-to add, the most famous painting, etc.).
+add rows by simply inserting all the required data described above.
 
-This information is needed to the software in order to perform properly.
-
+All the information is needed by the software to work properly.
 
 # How to start
 
-The first thing to do in order to develop the main functionalities described above
-is to clone the remote directory. To do so the user needs to use 
- `git clone https://github.com/Annanardo/Art/tree/main ` .
-By doing this is possible to automatically download all the files, 
-contained in the "Art" folder, and the user will be able to run the program.
+The first thing to do in order to develop the main functionalities just described
+is to clone the remote directory. 
+To do this, the user needs must run:
+
+`git clone https://github.com/Annanardo/Art/tree/main `
+
+This will automatically download all the files the user needs to run the program.
 
 # Functionalities
 
-To develop an appropriate structure for our project according to the goals
-we wanted to achieve, we created 4 main functions and stored them into 
-different modules:
+In order to develop an suitable structure for our project according to the intended goals,
+we created 4 main functions and stored them into different modules:
 
 -  `inserter` function;
 -  `check_artist` and  `check_painting` functions;
 -  `return_bio` function;
 -  `similarities` function.
 
-All of them are called by argparse from the main.py module.
-In the main.py, functions are recalled by the optional arguments.
+All these functions are called by argparse from the main.py module by the corresponding
+optional arguments.
 
 This means that if the user wants to get some insights from our functions, he/she
-doesn't need to point on the specific module that contains the function, but it's
-sufficient to type:
+doesn't need to point to the specific module that contains the function, but it's
+enough to type:
 
 ```bash
 python main.py "name of the artist/painting" - optional argument
 ```
 
-The name of the artist or the painting is, indeed, a positional argument,
-that should always be inserted. No optional argument is required if the user only wants to know whether the artist
-is present in the CSV file. 
+The name of the artist or painting is indeed a positional argument
+that should always be included. No optional argument is required if the user only wants to know if the artist
+is present in our database.. 
 
-For example, if we now want to know if Claude Monet is present, we have just to write:
+For example, if we want to know if Claude Monet is present, we only neeed to write:
 
 ```bash
 python main.py "Claude Monet"
@@ -84,16 +83,15 @@ Claude Monet is the artist of Impression, Sunrise
 
 Instead, for more complicated queries, we can recall some optional arguments. 
 
-
-Here follow some examples:
+Here are some examples:
 
 ### •	Add a new artist (-a)
 
 ```bash
 python main.py "Bansky" -a
 ```
-This argument allows to insert a new artist into the database. The -a activates the `inserter` function that will 
-first check if the artist is already present in our database and then generate a sequence of questions to insert all the necessary data:
+This argument allows to insert a new artist to the database. The -a activates the `inserter` function which
+first checks if the artist already exists in our database and then generate a sequence of questions to insert all the necessary data:
 
 ```bash
 Now enter the name of his/her most famous painting -> Baloon girl
@@ -165,28 +163,29 @@ Now you can see by yourself if the artist and his/her most famous painting are p
 49                         Jackson Pollock : Blue Poles
 ```
 
-Other two commands are:
+It's possible to see them separated with the following commands:
 
 - `python main.py "Impression, Sunrise" -p` which allows to see the entire list of paintings
 - `python main.py "Claude Monet" -a`, to have access to the entire list of artists only.
 
-
 ### •	Print a bio of the artist (-bio)
 
-The function of the biography module can be used to explain, more understandably and completely, the life of the artists. Together with the name and the nationality, It puts together some details that can be found in the dataset's columns. 
-The function first checks if the input we inserted is present in the database, if not the system will warn you and invite you to check if you wrote it correctly.
-You can also check the full biography with Wikipedia's link.
+The return_biography function can be used to explain the artist's life in a more understandable and complete way. 
+The code is structured to compile together with the name and nationality some details that can be found in the columns of the dataset and 
+formulates a short biography of the artist. The function first checks if the input we inserted is present in the database,
+if not the system will warn and invite you to check if you wrote it correctly. 
+It's also possible to look at the complete biography using the link from Wikipedia.
 
-To use the function the user should recall the optional argument:
+To use the function the user should recall the optional argument -bio:
 
 ```bash
 python main.py "Claude Monet" -bio
 ```
 
-This will return a brief description of who was the artist, in which years has lived, which was his/her most famous 
-painting and in which year it was painted. After this, you can find the museum in which the artwork is
-displayed, to which movement the artist belongs, and the total number of artworks that have been made, 
-together with Wikipedia's link. 
+This will return a brief description of who the artist was, in which years has lived, which was his/her most famous 
+painting and when it was painted. After that, you can find the museum where the artwork is
+displayed, the artistic movement the artist belongs to and the total number of artworks that have been done, 
+along with the link to Wikipedia. 
 
 The output:
 
@@ -203,29 +202,28 @@ the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ### •	Compare different artists (-s)
 
-The similarities function is a function that allows the user to make some
-comparisons between the artist she/he is interested in and other artists.
-The function has been thought to have the columns "Nationality", "Genre"
-and "paintings" as criteria for comparison and returns a result only if the number of artists
-satisfying a given parameter are 2 or more. 
-To use the function the user should recall the optional argument:
+The similarities function allows the user to make some comparisons between the artist of interest
+and other artists. The function uses the columns "Nationality", "Genre" and "Paintings" as criteria
+for comparison, in order to use it the user should recall the optional argument -s:
 
 ```bash
 python main.py "Claude Monet" -s
 ```
 
-After this, the user is asked if she/he wants to visualize similarities according
-to nationality (nat), artistic movement (mov), or the number of paintings (nop).
+After that, the user is asked if she/he wants to visualize similarities by 
+nationality (nat), artistic movement (mov), or the number of paintings (nop).
 Here an example:
 
 ```bash
 Do you want to see the similarities according to nationality, artistic movement or number of paintings? 
 (nat, mov, nop) -> nat 
 ```
-If the user chooses nationality or artistic movement, the function retreives 
-all the artists that satisfy the requirement.
+
+On the one hand, if the user selects nationality or artistic movement, the function will get
+all artists that meet the requirement.
 
 ```bash
+French artists are the following:
 3                Claude Monet
 6               Edouard Manet
 15      Pierre-Auguste Renoir
@@ -241,10 +239,9 @@ all the artists that satisfy the requirement.
 46               Paul Gauguin
 ```
 
-On the other hand, if the user chooses to visualize 
-the number of paintings, she/he is asked if she/he wants to visualize
-the artists with a higher (>), smaller (<) or equal (==) number of artworks and,
-after the choice, the list of artists is provided.
+On the other hand, if the user chooses to visualize the number of paintings, 
+she/he is asked if she/he wants to visualizethe artists with a higher (>), smaller (<) or equal (==)
+number of artworks and, after the selection, the list of artists will be displayed.
 For example:
 
 ```bash
@@ -252,6 +249,7 @@ Do you want to search for artists that have made more (>), less (<) or the same 
 ```
 
 ```bash
+The artists that painted less than 73 artworks are the following:
 2       Diego Rivera         70
 25        Caravaggio         55
 34   Gustave Courbet         59
@@ -267,16 +265,13 @@ Do you want to search for artists that have made more (>), less (<) or the same 
 
 # Contributing
 
-If you want to contribute to the Artdatabase by adding more information, feel free
-to pull requests.
-Please, contact us if you wish to implement significant modifications and test
-before pulling.
-
+If you would like to contribute to the Artdatabase by adding more information, please feel free
+to submit pull requests.
+Please contact us if you wish to implement significant changes and test them before pulling.
 
 # License
 
 GNU License
-
 
 # Authors
 
