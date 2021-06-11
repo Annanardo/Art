@@ -17,7 +17,7 @@ In order to store all the paintings and authors, we created a csv file, containi
 - Dates of birth and death;
 - Most famous painting;
 - Year of execution;
-- Painting location (Meuseum);
+- Painting location (Museum);
 - Artistical movement;
 - Nationality of the artist;
 - Number of paintings the artist did in his/her life;
@@ -77,7 +77,7 @@ Instead, for more complicated queries, we can recall some optional arguments.
 Here follow some examples:
 
 ```bash
-paython main.py "Bansky" -a
+python main.py "Bansky" -a
 ```
 This argument allows to insert a new artist into the database. The -a activates the `inserter` function that will 
 first check if the artist is already present in our database and then generate a sequence of questions to insert all the necessary data:
@@ -151,10 +151,12 @@ Now you can see by yourself if the artist and his/her most famous painting are p
 
 Other two commands are:
 
-- `paython main.py "Impression, Sunrise" -p` which allows to see the entire list of paintings
-- `paython main.py "Claude Monet" -a`, to have access to the entire list of artists only.
+- `python main.py "Impression, Sunrise" -p` which allows to see the entire list of paintings
+- `python main.py "Claude Monet" -a`, to have access to the entire list of artists only.
 
-#Biography function
+
+And then we have biography and similarity functions.
+
 
 The function of the biography module can be used to explain, in a more understandable and complete way, the life of the artists. Together with the name and the nationality, It puts together some details that can be found in the dataset's columns. 
 The function first check if the input we inserted is present in the database, if not the system will warn you and invite you to check if you wrote it correctly.
@@ -181,10 +183,24 @@ the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ```
 
+The similarities function is a function that allows the user to make some
+comparisons between the artist she/he is interested in and other artists.
+The function has been thought to have the columns "Nationality","Genre"
+and "paintings" as critieria for comparison and returns a result only if the number of artists
+satisfying a given parameter are 2 or more. 
+To use the function the user should recall the optional argument:
 
+```bash
+python main.py "Claude Monet" -s
+```
 
-
-
+After this, the user is asked if she/he wants to visualize similarities according
+to nationality (nat), artistic movement (mov) or number of paintings (nop).
+If the user chooses nationality or artistic movement, the function retrives 
+all the artists that satisfy the requirement. Otherwise, if the user chooses
+to visualize the number of paintings she/he is asked if she/he want to visualize
+the artists with a higher (>), smaller (<) or equal (==) amount of artworks and,
+after the choice, the list of artists is provived.
 
 
 # Contributing
