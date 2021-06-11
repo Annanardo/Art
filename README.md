@@ -9,9 +9,14 @@ If the name of the artist or painting provided as input is not present,
 the program asks the user whether he/she wants to insert it. 
 All of this can be managed directly from the machine terminal of the user.
 
+In this brief, we will show a general overview of the initial csv file as well
+as a short explanation of how the software works and the results the user can 
+get out of it.
+
 # CSV file
 
-In order to store all the paintings and authors, we created a csv file, containing:
+In order to store all the paintings and authors, we created a csv file we called
+ `artists_paintings`, defined by the following properties:
 
 - Name of the artist;
 - Dates of birth and death;
@@ -59,9 +64,12 @@ sufficient to type:
 ```bash
 python main.py "name of the artist/painting" - optional argument
 ```
+
 The name of the artist or of the painting is indeed a positional argument,
 that should always been inserted. No optional argument is required if the user only wants to know whether the artist
-is present in the csv file. For example, if we now want to know if Claude Monet is present, we have just to write:
+is present in the csv file. 
+
+For example, if we now want to know if Claude Monet is present, we have just to write:
 
 ```bash
 python main.py "Claude Monet"
@@ -74,7 +82,11 @@ Claude Monet is the artist of Impression, Sunrise
 ```
 
 Instead, for more complicated queries, we can recall some optional arguments. 
+
+
 Here follow some examples:
+
+## Add a new artist (-a)
 
 ```bash
 python main.py "Bansky" -a
@@ -93,6 +105,9 @@ Now enter the total number of artworks realized by the artist-> 136
 Now enter the link to the wikipedia page of the artist-> https://en.wikipedia.org/wiki/Banksy
 Thank you for your contribution!
 ```
+
+## Find manually if the artist/painting is present in the database (-d)
+
 Another argument is `python main.py "Claude Monet" -d`, which after being called allows to get the database realtion between artist and painting:
 
 ```bash
@@ -155,8 +170,7 @@ Other two commands are:
 - `python main.py "Claude Monet" -a`, to have access to the entire list of artists only.
 
 
-And then we have biography and similarity functions.
-
+## Print a bio of the artist (-bio)
 
 The function of the biography module can be used to explain, in a more understandable and complete way, the life of the artists. Together with the name and the nationality, It puts together some details that can be found in the dataset's columns. 
 The function first check if the input we inserted is present in the database, if not the system will warn you and invite you to check if you wrote it correctly.
@@ -183,6 +197,8 @@ the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ```
 
+## Compare different artists (-s)
+
 The similarities function is a function that allows the user to make some
 comparisons between the artist she/he is interested in and other artists.
 The function has been thought to have the columns "Nationality","Genre"
@@ -196,23 +212,26 @@ python main.py "Claude Monet" -s
 
 After this, the user is asked if she/he wants to visualize similarities according
 to nationality (nat), artistic movement (mov) or number of paintings (nop).
+
 If the user chooses nationality or artistic movement, the function retrives 
 all the artists that satisfy the requirement. Otherwise, if the user chooses
 to visualize the number of paintings she/he is asked if she/he want to visualize
-the artists with a higher (>), smaller (<) or equal (==) amount of artworks and,
+the artists with a higher (>), smaller (<) or equal (==) number of artworks and,
 after the choice, the list of artists is provived.
 
 
 # Contributing
 
-If you want to contribute in growing the information of the Artdatabase, feel free 
+If you want to contribute in increasing the information of the Artdatabase, feel free 
 to pull requests.
 Please contact us if you wish to implement significant modifications and test
 before pulling.
 
+
 # License
 
 GNU License
+
 
 # Authors
 
