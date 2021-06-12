@@ -1,8 +1,8 @@
 """
 This module is the one that tests some of the functions
 necessary to let the user interact with the database.
-Each Test Case tests a Known valid and invalid entries.
-tearDown and setUp functions were used as well
+Each Test Case tests a valid and invalid entries.
+TearDown and SetUp functions were used as well
 to set up mock variables and the csv file needed
 to test the functions.
 """
