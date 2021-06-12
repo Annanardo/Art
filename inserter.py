@@ -67,13 +67,13 @@ def add_element(a_or_p, response=""):
                 life = input(
                     "You can't enter nothing..." + "please put anything ->")
             year = input(
-                "Now enter the year(s) of realization" +
+                "Now enter the year(s) of realization " +
                 "of the most famous artwork of the artist->")
             while(year == ""):
                 year = input(
                     "You can't enter nothing..." + "please put anything ->")
             museum = input(
-               "Now enter the museum and place (museum - city)" +
+               "Now enter the museum and place (museum - city) " +
                "where the painting is placed->")
             while(museum == ""):
                 museum = input(
@@ -89,7 +89,7 @@ def add_element(a_or_p, response=""):
                 nationality = input(
                     "You can't enter nothing..." + "please put anything ->")
             paintings = input(
-                "Now enter the total number of artworks" +
+                "Now enter the total number of artworks " +
                 "realized by the artist->")
             while(paintings == ""):
                 paintings = input(
@@ -126,13 +126,13 @@ def add_element(a_or_p, response=""):
                 artwork = input(
                     "You can't enter nothing..." + "please put anything ->")
             year = input(
-                "Now enter the year(s) of realization of" +
+                "Now enter the year(s) of realization of " +
                 "the most famous artwork of the artist->")
             while(year == ""):
                 year = input(
                     "You can't enter nothing..." + "please put anything ->")
             museum = input(
-                "Now enter the museum and place (museum, city)" +
+                "Now enter the museum and place (museum, city) " +
                 "where the painting is placed->")
             while(museum == ""):
                 museum = input(
@@ -146,7 +146,7 @@ def add_element(a_or_p, response=""):
                 nationality = input(
                     "You can't enter nothing..." + "please put anything ->")
             paintings = input(
-                "Now enter the total number of artworks" +
+                "Now enter the total number of artworks " +
                 "realized by the artist->")
             while(paintings == ""):
                 paintings = input(
