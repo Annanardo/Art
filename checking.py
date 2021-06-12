@@ -25,9 +25,6 @@ class Check:
         function should return that the artist is not
         present in the file.
         """
-        def Convert(string):
-            li = list(string.split(" "))
-            return li
         artist = artist.lower()
         db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
         artists = db["Name"].str.lower()
