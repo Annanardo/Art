@@ -13,7 +13,7 @@ In the following paragraphs you'll find a general overview of the initial CSV fi
 as a short explanation of how the software works and the outputs the user can 
 get out of it.
 
-# CSV file
+# CSV file :page_facing_up:
 
 In order to store all the paintings and authors, we created a CSV file called
  `artists_paintings.csv`, defined by the following properties:
@@ -34,17 +34,17 @@ add rows by simply inserting all the required data described above.
 
 All the information is needed by the software to work properly.
 
-# How to start
+# How to start :man_technologist:
 
 The first thing to do in order to develop the main functionalities just described
 is to clone the remote directory. 
-To do this, the user needs must run:
+To do this, the user must type:
 
 `git clone https://github.com/Annanardo/Art/tree/main `
 
 This will automatically download all the files the user needs to run the program.
 
-# Functionalities
+# Functionalities :gear:
 
 In order to develop an suitable structure for our project according to the intended goals,
 we created 4 main functions and stored them into different modules:
@@ -62,7 +62,7 @@ doesn't need to point to the specific module that contains the function, but it'
 enough to type:
 
 ```bash
-python main.py "name of the artist/painting" - optional argument
+python main.py "name of the artist/painting" -optional argument
 ```
 
 The name of the artist or painting is indeed a positional argument
@@ -107,7 +107,7 @@ Thank you for your contribution!
 
 ### •	Find manually if the artist/painting is present in the database (-d)
 
-Another argument is `python main.py "Claude Monet" -d`, which after being called allows to get the database relation between artist and painting:
+Another argument is `python main.py "Claude Monet" -d`, which after being called allows to get the database relation between all artists and paintings:
 
 ```bash
 Now you can see by yourself if the artist and his/her most famous painting are present in our database!
@@ -166,7 +166,7 @@ Now you can see by yourself if the artist and his/her most famous painting are p
 It's possible to see them separated with the following commands:
 
 - `python main.py "Impression, Sunrise" -p` which allows to see the entire list of paintings
-- `python main.py "Claude Monet" -a`, to have access to the entire list of artists only.
+- `python main.py "Claude Monet" -art`, to have access to the entire list of artists only.
 
 ### •	Print a bio of the artist (-bio)
 
@@ -245,7 +245,8 @@ number of artworks and, after the selection, the list of artists will be display
 For example:
 
 ```bash
-Do you want to search for artists that have made more (>), less (<) or the same (==) number you provided as input?<
+Do you want to search for artists that have made more (>), less (<) or the
+same (==) number you provided as input?<
 ```
 
 ```bash
@@ -263,17 +264,17 @@ The artists that painted less than 73 artworks are the following:
 49   Jackson Pollock         24
 ```
 
-# Contributing
+# Contributing :handshake:
 
 If you would like to contribute to the Artdatabase by adding more information, please feel free
 to submit pull requests.
 Please contact us if you wish to implement significant changes and test them before pulling.
 
-# License
+# License :lock:
 
 GNU License
 
-# Authors
+# Authors :two_women_holding_hands::two_women_holding_hands:
 
 - Vittoria Lazzer
 - Melissa Mattioli
