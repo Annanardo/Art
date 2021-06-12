@@ -7,8 +7,10 @@ def similarities(column, parameter):
     artist given as an input and
     the other artists stored in our database.
     The code is structured in order to
-    individuate similarities according to column
+    individuate similarities according to columns
     "Nationality", "Genre" and "paintings".
+    The user should select the column she/he
+    is interested in.
     If the user is looking for similarities according
     to the number of paintings,
     she/he is asked to specify if she/he is interested
