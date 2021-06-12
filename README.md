@@ -49,7 +49,7 @@ This will automatically download all the files the user needs to run the program
 In order to develop an suitable structure for our project according to the intended goals,
 we created 4 main functions and stored them into different modules:
 
--  `inserter` function;
+-  `add_element` function;
 -  `check_artist` and  `check_painting` functions;
 -  `return_bio` function;
 -  `similarities` function.
@@ -90,7 +90,7 @@ Here are some examples:
 ```bash
 python main.py "Bansky" -a
 ```
-This argument allows to insert a new artist to the database. The -a activates the `inserter` function which
+This argument allows to insert a new artist to the database. The -a activates the `add_element` function which
 first checks if the artist already exists in our database and then generate a sequence of questions to insert all the necessary data:
 
 ```bash
