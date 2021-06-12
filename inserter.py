@@ -3,14 +3,14 @@ The function of the inserter module
 allows to append new artists with relative
 most famous painting into our database.
 The function first checks if the input
-we want to insert is already present in
-the database, if not it asks weather
-you are inserting the name of an artist
-or of a painting.
-After that it asks you to add all the
+the user wants to insert is already present in
+the database, if not it asks if the inserted
+value is the name of an artist
+or painting.
+After that it requires to add all the
 other additional information, to generate
-a list of 11 items.
-Finally the list is inserter in a new
+a list of 10 items.
+Finally the list is inserted in a new
 row becoming part
 of our database.
 """
@@ -25,10 +25,10 @@ def add_element(a_or_p, response=""):
 
     """
     This function comes into play once the user inputs a value
-    that is not to be found inside the database, or when, after
+    that is not inside the database, or when, after
     the input, the user writes the optional argument -a.
     It asks if the input is a name of an artist or a painting,
-    then it asks for the remaining values to insert in all the 9 columns
+    then it asks for the remaining values to insert in all the 10 columns
     of the database.
     """
     db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
