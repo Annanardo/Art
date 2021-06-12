@@ -21,15 +21,15 @@ import argparse
 import pandas as pd
 
 db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
-parser = argparse.ArgumentParser(description='this program will' +
+parser = argparse.ArgumentParser(description='This program will' +
                                              ' check if the name you put is' +
-                                             'inside our database of ' +
+                                             ' inside our database of ' +
                                              'artists and their ' +
                                              'most famous artwork.' +
-                                             'If the names have' +
-                                             'more than one space,' +
+                                             ' If the names have ' +
+                                             'more than one space, ' +
                                              'wrap them ' +
-                                             'around quotes ("")')
+                                             'around quotes ("").')
 group = parser.add_mutually_exclusive_group()
 parser.add_argument("name",
                     help="input the name of a known artist or painting")
