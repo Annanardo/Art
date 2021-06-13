@@ -5,12 +5,12 @@ who was the artist with relative
 most famous painting, the number of artworks that
 has been made, movement, day of birth and death
 that can be found into our database.
-The function first check if the input
-we inserted is present in
-the database, if not the system will warn you
-and invite you to check if you wrote it correctly.
+The function first checks if the input
+the user inserted is present in
+the database, if not the system will warn the user
+and invite him to check if it is correctly written.
 
-You can also check the full biography with
+The user can also check the full biography with
 the Wikipedia's link.
 """
 
@@ -24,7 +24,7 @@ def return_bio(Artist):
     and wants to obtain as output the complete list of information that
     can be found inside the database, or when, after
     the input, the user writes the optional argument -bio.
-    It asks if the input is a name of an artist or a painting.
+    It recognizes the input if it is a name of an artist.
     """
     db = pd.DataFrame(pd.read_csv('artists_paintings.csv'))
     Artists = list(db["Name"])
@@ -47,7 +47,7 @@ def return_bio(Artist):
             Artist.lower()].values[0], ". The painter belongs to: ", db[
                 "Genre"].loc[db["Name"].str.lower() == Artist.lower()].values[
                     0], "movement(s)." +
-                    " in addition to his/her" +
+                    " In addition to his/her" +
                     " most famous painting, she/he made", db[
                     "Paintings"].loc[
                         db["Name"].str.lower() == Artist.lower(
