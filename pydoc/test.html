@@ -8,7 +8,7 @@
 <td valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>test</strong></big></big></font></td
 ><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cusers%5Cmeli%5Cart%5Ctest.py">c:\users\meli\art\test.py</a></font></td></tr></table>
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/vittorialazzer/Desktop/Art/test.py">/Users/vittorialazzer/Desktop/Art/test.py</a></font></td></tr></table>
     <p><tt>This&nbsp;module&nbsp;is&nbsp;the&nbsp;one&nbsp;that&nbsp;tests&nbsp;some&nbsp;of&nbsp;the&nbsp;functions<br>
 necessary&nbsp;to&nbsp;let&nbsp;the&nbsp;user&nbsp;interact&nbsp;with&nbsp;the&nbsp;database.<br>
 Each&nbsp;Test&nbsp;Case&nbsp;tests&nbsp;a&nbsp;valid&nbsp;and&nbsp;invalid&nbsp;entries.<br>
@@ -50,7 +50,36 @@ to&nbsp;test&nbsp;the&nbsp;functions.</tt></p>
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
 <td colspan=2><tt><a href="#TestName">TestName</a>(methodName='runTest')<br>
 &nbsp;<br>
-<br>&nbsp;</tt></td></tr>
+A&nbsp;class&nbsp;whose&nbsp;instances&nbsp;are&nbsp;single&nbsp;test&nbsp;cases.<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;the&nbsp;test&nbsp;code&nbsp;itself&nbsp;should&nbsp;be&nbsp;placed&nbsp;in&nbsp;a&nbsp;method&nbsp;named<br>
+'runTest'.<br>
+&nbsp;<br>
+If&nbsp;the&nbsp;fixture&nbsp;may&nbsp;be&nbsp;used&nbsp;for&nbsp;many&nbsp;test&nbsp;cases,&nbsp;create&nbsp;as<br>
+many&nbsp;test&nbsp;methods&nbsp;as&nbsp;are&nbsp;needed.&nbsp;When&nbsp;instantiating&nbsp;such&nbsp;a&nbsp;<a href="unittest.case.html#TestCase">TestCase</a><br>
+subclass,&nbsp;specify&nbsp;in&nbsp;the&nbsp;constructor&nbsp;arguments&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;test&nbsp;method<br>
+that&nbsp;the&nbsp;instance&nbsp;is&nbsp;to&nbsp;execute.<br>
+&nbsp;<br>
+Test&nbsp;authors&nbsp;should&nbsp;subclass&nbsp;<a href="unittest.case.html#TestCase">TestCase</a>&nbsp;for&nbsp;their&nbsp;own&nbsp;tests.&nbsp;Construction<br>
+and&nbsp;deconstruction&nbsp;of&nbsp;the&nbsp;test's&nbsp;environment&nbsp;('fixture')&nbsp;can&nbsp;be<br>
+implemented&nbsp;by&nbsp;overriding&nbsp;the&nbsp;'setUp'&nbsp;and&nbsp;'tearDown'&nbsp;methods&nbsp;respectively.<br>
+&nbsp;<br>
+If&nbsp;it&nbsp;is&nbsp;necessary&nbsp;to&nbsp;override&nbsp;the&nbsp;__init__&nbsp;method,&nbsp;the&nbsp;base&nbsp;class<br>
+__init__&nbsp;method&nbsp;must&nbsp;always&nbsp;be&nbsp;called.&nbsp;It&nbsp;is&nbsp;important&nbsp;that&nbsp;subclasses<br>
+should&nbsp;not&nbsp;change&nbsp;the&nbsp;signature&nbsp;of&nbsp;their&nbsp;__init__&nbsp;method,&nbsp;since&nbsp;instances<br>
+of&nbsp;the&nbsp;classes&nbsp;are&nbsp;instantiated&nbsp;automatically&nbsp;by&nbsp;parts&nbsp;of&nbsp;the&nbsp;framework<br>
+in&nbsp;order&nbsp;to&nbsp;be&nbsp;run.<br>
+&nbsp;<br>
+When&nbsp;subclassing&nbsp;<a href="unittest.case.html#TestCase">TestCase</a>,&nbsp;you&nbsp;can&nbsp;set&nbsp;these&nbsp;attributes:<br>
+*&nbsp;failureException:&nbsp;determines&nbsp;which&nbsp;exception&nbsp;will&nbsp;be&nbsp;raised&nbsp;when<br>
+&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;instance's&nbsp;assertion&nbsp;methods&nbsp;fail;&nbsp;test&nbsp;methods&nbsp;raising&nbsp;this<br>
+&nbsp;&nbsp;&nbsp;&nbsp;exception&nbsp;will&nbsp;be&nbsp;deemed&nbsp;to&nbsp;have&nbsp;'failed'&nbsp;rather&nbsp;than&nbsp;'errored'.<br>
+*&nbsp;longMessage:&nbsp;determines&nbsp;whether&nbsp;long&nbsp;messages&nbsp;(including&nbsp;repr&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;objects&nbsp;used&nbsp;in&nbsp;assert&nbsp;methods)&nbsp;will&nbsp;be&nbsp;printed&nbsp;on&nbsp;failure&nbsp;in&nbsp;*addition*<br>
+&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;any&nbsp;explicit&nbsp;message&nbsp;passed.<br>
+*&nbsp;maxDiff:&nbsp;sets&nbsp;the&nbsp;maximum&nbsp;length&nbsp;of&nbsp;a&nbsp;diff&nbsp;in&nbsp;failure&nbsp;messages<br>
+&nbsp;&nbsp;&nbsp;&nbsp;by&nbsp;assert&nbsp;methods&nbsp;using&nbsp;difflib.&nbsp;It&nbsp;is&nbsp;looked&nbsp;up&nbsp;as&nbsp;an&nbsp;instance<br>
+&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;so&nbsp;can&nbsp;be&nbsp;configured&nbsp;by&nbsp;individual&nbsp;tests&nbsp;if&nbsp;required.<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%"><dl><dt>Method resolution order:</dt>
 <dd><a href="test.html#TestName">TestName</a></dd>
@@ -378,7 +407,7 @@ the&nbsp;specified&nbsp;test&nbsp;method's&nbsp;docstring.</tt></dd></dl>
 
 <dl><dt><a name="TestName-skipTest"><strong>skipTest</strong></a>(self, reason)</dt><dd><tt>Skip&nbsp;this&nbsp;test.</tt></dd></dl>
 
-<dl><dt><a name="TestName-subTest"><strong>subTest</strong></a>(self, msg=&lt;object object at 0x0000023CED6E89F0&gt;, **params)</dt><dd><tt>Return&nbsp;a&nbsp;context&nbsp;manager&nbsp;that&nbsp;will&nbsp;return&nbsp;the&nbsp;enclosed&nbsp;block<br>
+<dl><dt><a name="TestName-subTest"><strong>subTest</strong></a>(self, msg=&lt;object object at 0x7ff260479370&gt;, **params)</dt><dd><tt>Return&nbsp;a&nbsp;context&nbsp;manager&nbsp;that&nbsp;will&nbsp;return&nbsp;the&nbsp;enclosed&nbsp;block<br>
 of&nbsp;code&nbsp;in&nbsp;a&nbsp;subtest&nbsp;identified&nbsp;by&nbsp;the&nbsp;optional&nbsp;message&nbsp;and<br>
 keyword&nbsp;parameters.&nbsp;&nbsp;A&nbsp;failure&nbsp;in&nbsp;the&nbsp;subtest&nbsp;marks&nbsp;the&nbsp;test<br>
 case&nbsp;as&nbsp;failed&nbsp;but&nbsp;resumes&nbsp;execution&nbsp;at&nbsp;the&nbsp;end&nbsp;of&nbsp;the&nbsp;enclosed<br>
