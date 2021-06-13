@@ -3,13 +3,14 @@
 ArtDatabase is a software development project that allows users to 
 obtain information about famous artists and their most iconic paintings. 
 In addition, it allows to get information about artists belonging to the
-same artistic movement or nationality and constructs a short biography on the fly.
+same artistic movement or that have the same nationality and 
+constructs a short biography on the fly.
 
-If the name of the artist or painting given as input is not avaiable,
-the program asks the user whether he/she wants to insert it. 
+If the name of the artist or painting given as input is not present or
+not available, the program asks the user whether he/she wants to insert it. 
 All of this can be managed directly from the user's machine terminal.
 
-In the following paragraphs you'll find a general overview about the origin CSV file from
+In the following paragraphs you'll find a general overview about the original CSV file from
 which we have taken the initial data, as well as a short explanation of how the software 
 works and the outputs the user can obtain.
 
