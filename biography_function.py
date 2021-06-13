@@ -10,7 +10,7 @@ the user inserted is present in
 the database, if not the system will warn the user
 and invite him to check if it is correctly written.
 
-The user can also check the full biography with
+The user can also read and see the full biography with
 the Wikipedia's link.
 """
 
