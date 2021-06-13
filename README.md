@@ -9,9 +9,9 @@ If the name of the artist or painting given as input is not avaiable,
 the program asks the user whether he/she wants to insert it. 
 All of this can be managed directly from the user's machine terminal.
 
-In the following paragraphs you'll find a general overview of the initial CSV file as well
-as a short explanation of how the software works and the outputs the user can 
-get out of it.
+In the following paragraphs you'll find a general overview about the origin CSV file from
+which we have taken the initial data, as well as a short explanation of how the software 
+works and the outputs the user can obtain.
 
 # CSV file :page_facing_up:
 
@@ -32,13 +32,15 @@ The original file contains 49 rows (corresponding to 49 different artists), but 
 structure can be changed by the user since there is a function that allows him/her to
 add rows by simply inserting all the required data described above.
 
-All the information is needed by the software to work properly.
+All the information is needed by the software to work properly and to perform the functions
+we created.
 
 # How to start :man_technologist:
 
 The first thing to do in order to develop the main functionalities just described
 is to clone the remote directory. 
-To do this, the user must type:
+
+To do this, the user can type:
 
 `git clone https://github.com/Annanardo/Art/tree/main `
 
@@ -46,7 +48,7 @@ This will automatically download all the files the user needs to run the program
 
 # Functionalities :gear:
 
-In order to develop an suitable structure for our project according to the intended goals,
+In order to develop a suitable structure for our project according to the intended goals,
 we created 4 main functions and stored them into different modules:
 
 -  `add_element` function;
@@ -54,20 +56,23 @@ we created 4 main functions and stored them into different modules:
 -  `return_bio` function;
 -  `similarities` function.
 
-All these functions are called by argparse from the main.py module by the corresponding
+All these functions are called by argparse from the `main.py` module by the corresponding
 optional arguments.
 
 This means that if the user wants to get some insights from our functions, he/she
-doesn't need to point to the specific module that contains the function, but it's
-enough to type:
+doesn't need to point to the specific module that contains the function, but in general 
+it's enough to type:
 
 ```bash
 python main.py "name of the artist/painting" -optional argument
 ```
 
-The name of the artist or painting is indeed a positional argument
-that should always be included. No optional argument is required if the user only wants to know if the artist
+The name of the artist or painting is indeed a positional argument that should always 
+be included. 
+
+No optional argument is required if the user only wants to know if the artist
 is present in our database.. 
+
 
 For example, if we want to know if Claude Monet is present, we only neeed to write:
 
@@ -83,15 +88,18 @@ Claude Monet is the artist of Impression, Sunrise
 
 Instead, for more complicated queries, we can recall some optional arguments. 
 
-Here are some examples:
+Here follow some examples:
+
 
 ### •	Add a new artist (-a)
 
 ```bash
 python main.py "Bansky" -a
 ```
-This argument allows to insert a new artist to the database. The -a activates the `add_element` function which
-first checks if the artist already exists in our database and then generate a sequence of questions to insert all the necessary data:
+This argument allows to insert a new artist to the database. The `-a` activates the 
+`add_element` function which first checks if the artist already exists in our database 
+and then generate a sequence of questions to insert all the necessary data, such as the ones
+below:
 
 ```bash
 Now enter the name of his/her most famous painting -> Baloon girl
@@ -107,7 +115,12 @@ Thank you for your contribution!
 
 ### •	Find manually if the artist/painting is present in the database (-d)
 
-Another argument is `python main.py "Claude Monet" -d`, which after being called allows to get the database relation between all artists and paintings:
+```bash
+python main.py "Claude Monet" -d
+```
+
+After being called, the argument `-d` allows to get the database relation 
+between all artists and paintings as follows:
 
 ```bash
 Now you can see by yourself if the artist and his/her most famous painting are present in our database!
@@ -170,11 +183,18 @@ It's possible to see them separated with the following commands:
 
 ### •	Print a bio of the artist (-bio)
 
-The return_biography function can be used to explain the artist's life in a more understandable and complete way. 
-The code is structured to compile together with the name and nationality some details that can be found in the columns of the dataset and 
-formulates a short biography of the artist. The function first checks if the input we inserted is present in the database,
+The return_biography function can be used to explain the artist's life in a 
+more understandable and complete way. 
+The code is structured to compile together with the name and nationality some details 
+that can be found in the columns of the dataset, and formulates a short biography 
+of the artist. 
+
+The function first checks if the input we inserted is present in the database;
 if not the system will warn and invite you to check if you wrote it correctly. 
-It's also possible to look at the complete biography using the link from Wikipedia.
+
+It's also possible to look at the complete biography using the link from Wikipedia, that 
+will be printed at the end of the output, so that the user can get a complete overview of
+the artist he/she is interested in.
 
 To use the function the user should recall the optional argument -bio:
 
@@ -182,12 +202,13 @@ To use the function the user should recall the optional argument -bio:
 python main.py "Claude Monet" -bio
 ```
 
-This will return a brief description of who the artist was, in which years has lived, which was his/her most famous 
-painting and when it was painted. After that, you can find the museum where the artwork is
-displayed, the artistic movement the artist belongs to and the total number of artworks that have been done, 
-along with the link to Wikipedia. 
+This will return a brief description of who the artist was, in which years has lived, 
+which was his/her most famous painting and when it was painted. 
+After that, you can find the museum where the artwork is displayed, the artistic movement 
+the artist belongs to and the total number of artworks that have been done, 
+along with the link to Wikipedia for a more detailed analysis.
 
-The output:
+Thus, the output will be:
 
 ```bash
 Claude Monet is a/an French artist who lived in these years: 1840 - 1926 . 
@@ -202,16 +223,24 @@ the complete biography:  http://en.wikipedia.org/wiki/Claude_Monet
 
 ### •	Compare different artists (-s)
 
-The similarities function allows the user to make some comparisons between the artist of interest
-and other artists. The function uses the columns "Nationality", "Genre" and "Paintings" as criteria
-for comparison, in order to use it the user should recall the optional argument -s:
+The similarities function allows the user to make some comparisons between the artist 
+of interest and other artists. 
+The function uses the columns "Nationality", "Genre" and "Paintings" as criteria
+for comparison. 
+
+In order to use it the user should recall the optional argument `-s` in the following way:
 
 ```bash
 python main.py "Claude Monet" -s
 ```
 
-After that, the user is asked if she/he wants to visualize similarities by 
-nationality (nat), artistic movement (mov), or the number of paintings (nop).
+After having inserted the input, the user can choose between different options, according to
+his/her preference to visualize similarities between artists based on:
+
+- nationality (`nat`), 
+- artistic movement (`mov`),  
+- number of paintings (`nop`).
+
 Here an example:
 
 ```bash
@@ -219,8 +248,10 @@ Do you want to see the similarities according to nationality, artistic movement 
 (nat, mov, nop) -> nat 
 ```
 
-On the one hand, if the user selects nationality or artistic movement, the function will get
-all artists that meet the requirement.
+When the user selects `nat`, as in our example, the program will output all the artists that 
+are born in the same Country of the artist he/she gave as input.
+
+Here follows the output:
 
 ```bash
 French artists are the following:
@@ -239,15 +270,27 @@ French artists are the following:
 46               Paul Gauguin
 ```
 
-On the other hand, if the user chooses to visualize the number of paintings, 
-she/he is asked if she/he wants to visualizethe artists with a higher (>), smaller (<) or equal (==)
-number of artworks and, after the selection, the list of artists will be displayed.
+Similarly, when the user select `mov`, the program will output the list of artists
+belonging to the same movement of the artist he/she gave as input.
+
+On an other hand, if the user chooses to visualize the number of paintings by typing `nop`, 
+she/he is asked if she/he wants to visualize the artists with an higher (>), smaller (<) 
+or equal (==) number of artworks and, after the selection, the list of artists will be displayed.
+
 For example:
 
 ```bash
+Do you want to see the similarities according to nationality, artistic movement or number of paintings? 
+(nat, mov, nop) -> nop
+
 Do you want to search for artists that have made more (>), less (<) or the
-same (==) number you provided as input?<
+same (==) number you provided as input? <
 ```
+
+We wanted to know the artists that painted LESS artworks than Claude Monet, and so we 
+inserted the `<`. 
+
+The output will be:
 
 ```bash
 The artists that painted less than 73 artworks are the following:
